@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewsReader", "NewsReader\NewsReader.csproj", "{4896C8BF-ABAB-4803-BCAB-71598CDAC27B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewsReader.Data", "NewsReader.Data\NewsReader.Data.csproj", "{509A177E-47B8-4BDF-85FD-A1F9D47AD5B5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,5 +15,9 @@ Global
 		{4896C8BF-ABAB-4803-BCAB-71598CDAC27B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4896C8BF-ABAB-4803-BCAB-71598CDAC27B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4896C8BF-ABAB-4803-BCAB-71598CDAC27B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{509A177E-47B8-4BDF-85FD-A1F9D47AD5B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{509A177E-47B8-4BDF-85FD-A1F9D47AD5B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{509A177E-47B8-4BDF-85FD-A1F9D47AD5B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{509A177E-47B8-4BDF-85FD-A1F9D47AD5B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
