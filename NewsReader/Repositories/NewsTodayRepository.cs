@@ -12,6 +12,7 @@ namespace NewsReader.Repositories
     public class NewsTodayRepository : INewsRepository
     {
         private HttpClient _httpClient;
+        private string _supplier = "NewsToday";
 
         public NewsTodayRepository()
         {
@@ -21,11 +22,10 @@ namespace NewsReader.Repositories
                        .Add(new MediaTypeWithQualityHeaderValue("application/xml"));
         }
 
-
-
-        public void Get()
+        public async Task<List<NewsData>> Get()
         {
-            throw new NotImplementedException();
+            var rawData = await GetData().ConfigureAwait(false);
+            return TransformToNewsData(rawData);
         }
 
         private async Task<Publishing> GetData()
@@ -38,15 +38,27 @@ namespace NewsReader.Repositories
                 XmlSerializer xmls = new XmlSerializer(typeof(Publishing));
                 var responseString = await resp.Content.ReadAsStringAsync();
                 data = (Publishing)xmls.Deserialize(new StringReader(responseString));
-                // Parse the response body. 
             }
 
             return data;
         }
 
-        private NewsData TransformToNewsData(Story story)
+        private List<NewsData> TransformToNewsData(Publishing publishings)
         {
-            throw new NotImplementedException();
+            var data = new List<NewsData>();
+            foreach(var story in publishings.Stories.Story)
+            {
+                data.Add(new NewsData()
+                {
+                    AddedDateTime = DateTime.Now,
+                    ImagePath = story.Image,
+                    NewsStory = story.NewstoryText,
+                    SupplierName = _supplier,
+                    Title = story.Title
+                });
+            }
+
+            return data;
         }
     }
 }

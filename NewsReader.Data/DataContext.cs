@@ -5,11 +5,11 @@ namespace NewsReader.Data
 {
     public class DataContext : DbContext
     {
-        public ApiContext(DbContextOptions<DataContext> options) 
+        public DataContext(DbContextOptions<DataContext> options) 
             : base(options)
         {
         }
 
-        public DbSet<NewStories> Employees { get; set; }
-        public DbSet<Suppliers> EmployeeDetails { get; set; }    }
+        public DbSet<NewStories> NewsStories { get; set; }
+        public DbSet<Suppliers> Suppliers { get; set; }    }
 }
